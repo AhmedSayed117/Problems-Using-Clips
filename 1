@@ -1,0 +1,36 @@
+(deffacts Family-knowledge
+	(father Ahmed Zain)
+	(father Mosaad Ahmed)
+	(father Mosaad Yassmen)
+	(mother Yassmen Koko)
+	(father Ahmed Koko)
+	(father Mosaad Yassmen)
+	(mother Azza Yassmen)
+	(mother Rana Zain))
+
+
+(defrule parents
+	(father ?A ?B)
+	(mother ?C ?B)
+=>   
+	(assert (parents ?A ?C ?B)))
+
+
+(defrule grandfathers
+	(or (and(father ?A ?B) 
+	(father ?B ?C))
+
+	(and(father ?A ?B) 
+	(mother ?B ?C)))
+=>   
+	(assert (grandfathers ?A ?C)))
+
+
+(defrule grandmothers
+	(or (and (mother ?A ?B) 
+	(mother ?B ?C))
+		 
+	(and(mother ?A ?B) 
+	(father ?B ?C)))	
+=>   
+	(assert (grandfathers ?A ?C)))
