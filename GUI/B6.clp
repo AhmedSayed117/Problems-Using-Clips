@@ -18,7 +18,7 @@
 =>
 	(if (> (length$ ?child) 3)
 	then
-	(printout t ?name "  ")))
+	(printout t ?name crlf)))
 
 
 (defrule input-user
@@ -36,7 +36,7 @@
 	(if (eq ?First ?child)
 	then
 	(retract ?set)
-	(printout t ?name " ")
+	(printout t "The Parent Of Child : " ?child " is "?name crlf)
 	else
 	(retract ?set)
 	(assert (person (name ?name) (childrens ?Rest)))))
