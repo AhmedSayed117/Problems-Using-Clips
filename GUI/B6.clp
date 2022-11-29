@@ -4,8 +4,8 @@
 
 
 (deffacts Initials-persons
-	(person (name "Ahmed") (childrens "A" "S" "H"))
-	(person (name "Sayed") (childrens "B" "C" "D"))
+	(person (name "Ahmed Sayed") (childrens "Ahmed Sayed" "S" "H" ))
+	(person (name "Khaled Ashraf") (childrens "B" "C" "D" "C"))
 	(person (name "Hassan") (childrens "X" "C" "D" "S" "N"))
 	(person (name "Youssef") (childrens "Y" "C" "D" "E"))
 	(person (name "Mohamed") (childrens "Z" "C" "D" "Y" "D" "Y"))
@@ -18,14 +18,14 @@
 =>
 	(if (> (length$ ?child) 3)
 	then
-	(printout t ?name crlf)))
+	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)))
 
 
 (defrule input-user
 	(declare (salience 4))
 =>
-	(printout t "Enter Child Name: ")
-	(assert (child-name (read))))
+	(printout t crlf "Enter Child Name: ")
+	(assert (child-name (readline))))
 
 
 (defrule Print-Parent-of-Child
@@ -36,7 +36,7 @@
 	(if (eq ?First ?child)
 	then
 	(retract ?set)
-	(printout t "The Parent Of Child : " ?child " is "?name crlf)
+	(printout t "parent of " ?child " is " ?name " " crlf)
 	else
 	(retract ?set)
 	(assert (person (name ?name) (childrens ?Rest)))))

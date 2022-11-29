@@ -48,21 +48,21 @@ public class ClipsGui extends JFrame{
                     if (Buttons.isSelected()){
                       switch (Buttons.getText()){
                           case "B1":
-                              System.out.println("------------B1-------------");
+                              System.out.println("\n------------B1-------------");
                               clips.clear();
                               clips.load("B1.clp");
                               clips.reset();
                               clips.run();
                               break;
                           case "B2":
-                              System.out.println("------------B2-------------");
+                              System.out.println("\n------------B2-------------");
                               clips.clear();
                               clips.load("B2.clp");
                               clips.reset();
                               clips.run();
                               break;
                            case "B3":
-                               System.out.println("------------B3-------------");
+                               System.out.println("\n------------B3-------------");
                                clips.clear();
                                clips.load("B3.clp");
                                clips.reset();
@@ -77,14 +77,14 @@ public class ClipsGui extends JFrame{
 //                              clips.run();
 //                              break;
                           case "B5":
-                              System.out.println("------------B5-------------");
+                              System.out.println("\n------------B5-------------");
                               clips.clear();
                               clips.load("B5.clp");
                               clips.reset();
                               clips.run();
                               break;
                           case "B6":
-                              System.out.println("------------B6-------------");
+                              System.out.println("\n------------B6-------------");
                               clips.clear();
                               clips.load("B6.clp");
                               clips.reset();
