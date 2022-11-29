@@ -1,18 +1,20 @@
 (defclass Shape 
 	(is-a USER) 
-	(role concrete)
+	(role abstract)
 	(slot ID (type SYMBOL))
 	(slot color (allowed-values red blue green yellow)))
 
 
-(defclass Square 
+(defclass Square
 	(is-a Shape)
+	(role concrete)
 	(slot length))
-	
 
-(defclass Rectangle 
+
+(defclass Rectangle
 	(is-a Shape)
 	(slot width)
+	(role concrete)
 	(slot length))
 	
 
