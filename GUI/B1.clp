@@ -1,29 +1,9 @@
 (deffacts Family-knowledge
-	(father Ramadan AhmedRamadan)
-	(father Ramadan Amr)
-	(father Ramadan Azza)
-	(father Ramadan Hayam)
-	
-	(mother OmHamada Hayam)
-	(mother OmHamada Azza)
-	(mother OmHamada Amr)
-	(mother OmHamada AhmedRamadan)
-	
-	
-	(father AhmedRamadan Marawan)
-	(father AhmedRamadan Arwa)
-	
-	(mother Hayam Mido)
-	(mother Hayam Menna)
-	
-	(mother Azza Yassmen)
-	(mother Azza Nada)
-	
-	(mother Yassmen Koko)
-	(mother Yassmen Selem)
-	
-	(father AhmedHassan Koko)
-	(father AhmedHassan Selem))
+	(father Ahmed Mohammed)
+	(father Hassan Ahmed)
+	(father Ali Sara)
+	(mother mona Mohammed)
+	)
 
 
 (defrule parents

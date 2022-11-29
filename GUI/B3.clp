@@ -1,7 +1,6 @@
 (deftemplate gpa 
 	(multislot info (type STRING)))
 
-
 (defrule read-from-file
     (declare (salience 50))
   =>
@@ -20,7 +19,5 @@
   =>
 	(open "outfile3.txt" data "a")
     (printout t ?name "   (" ?X1" " ?X2" "?X3" "?X4 ")   "(/ (+ ?X1 ?X2 ?X3 ?X4 ) 4) crlf)
-	
     (printout data ?name "   (" ?X1" " ?X2" "?X3" "?X4 ")   "(/ (+ ?X1 ?X2 ?X3 ?X4 ) 4) crlf)
-	(close data)
-	)    
+	(close data))    

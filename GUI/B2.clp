@@ -22,8 +22,7 @@
 	(choose ?X)
 => 
 	(if(eq ?X ?First)then 
-	(retract ?country)
-	(retract ?l)
+	(retract ?country)(retract ?l)
 	(assert (list ?CountreName $?N))
 	else
 	(retract ?country)
