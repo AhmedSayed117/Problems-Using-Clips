@@ -2,8 +2,7 @@
 	(father Ahmed Mohammed)
 	(father Hassan Ahmed)
 	(father Ali Sara)
-	(mother mona Mohammed)
-	)
+	(mother mona Mohammed))
 
 
 (defrule parents
@@ -11,25 +10,34 @@
 	(mother ?C ?B)
 =>   
 	(assert (parents ?A ?C ?B))
-	(printout t "(parents" " "?A" "?C" "?B")"  crlf)))
+	(printout t "(parents" " "?A" "?C" "?B")"  crlf)
+	(open "GUI1.txt" data "a")
+	(printout data "(parents" " "?A" "?C" "?B")"  crlf)
+	(close data))
 
 
 (defrule grandfathers
-	(or (and(father ?A ?B) 
+	(or (and(father ?A ?B)
 	(father ?B ?C))
 
-	(and(father ?A ?B) 
+	(and(father ?A ?B)
 	(mother ?B ?C)))
-=>   
+=>
 	(assert (grandfathers ?A ?C))
-	(printout t "(grandfathers" " "?A" "?C" )"  crlf))
+	(printout t "(grandfathers" " "?A" "?C")"  crlf)
+	(open "GUI1.txt" data "a")
+	(printout data "(grandfathers" " "?A" "?C")"  crlf)
+	(close data))
 
 (defrule grandmothers
-	(or (and (mother ?A ?B) 
+	(or (and (mother ?A ?B)
 	(mother ?B ?C))
-		 
-	(and(mother ?A ?B) 
-	(father ?B ?C)))	
-=>   
+
+	(and(mother ?A ?B)
+	(father ?B ?C)))
+=>
 	(assert (grandmothers ?A ?C))
-	(printout t "(grandmothers" " "?A" "?C" )"  crlf))
+	(printout t "(grandmothers" " "?A" "?C")"  crlf)
+	(open "GUI1.txt" data "a")
+	(printout data "(grandmothers" " "?A" "?C")"  crlf)
+	(close data))

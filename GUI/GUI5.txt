@@ -1,0 +1,12 @@
+area of square: [B] = 25
+perimeters of square: [B] = 20
+area of square: [A] = 9
+perimeters of square: [A] = 12
+area of rectangle: [C] = 10
+perimeters of rectangle: [C] = 14
+area of circle: [E] = 113.04
+perimeters of circle: [E] = 37.68
+area of circle: [D] = 12.56
+perimeters of circle: [D] = 12.56
+Total Area = 169.6
+Total perimeters = 96.24

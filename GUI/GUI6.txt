@@ -1,0 +1,8 @@
+This parent : ("Mohamed") Have More Than 3 Child ("Z" "C" "D" "Y" "D" "Y")
+This parent : ("Youssef") Have More Than 3 Child ("Y" "C" "D" "E")
+This parent : ("Hassan") Have More Than 3 Child ("X" "C" "D" "S" "N")
+This parent : ("Khaled Ashraf") Have More Than 3 Child ("B" "C" "D" "C")
+This parent : ("Mohamed") Have More Than 3 Child ("C" "D" "Y" "D" "Y")
+This parent : ("Mohamed") Have More Than 3 Child ("D" "Y" "D" "Y")
+This parent : ("Hassan") Have More Than 3 Child ("C" "D" "S" "N")
+parent of B is ("Khaled Ashraf") 

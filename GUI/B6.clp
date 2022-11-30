@@ -17,14 +17,12 @@
 =>
 	(if (> (length$ ?child) 3)
 	then
-	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)))
 
+	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)
 
-;(defrule input-user
-;	(declare (salience 4))
-;=>
-;	(printout t crlf "Enter Child Name: ")
-;	(assert (child-name (readline))))
+	(open "GUI6.txt" data "a")
+	(printout data "This parent : " ?name " Have More Than 3 Child " ?child crlf)
+	(close data)))
 
 
 (defrule Print-Parent-of-Child
@@ -36,6 +34,9 @@
 	then
 	(retract ?set)
 	(printout t "parent of " ?child " is " ?name " " crlf)
+	(open "GUI6.txt" data "a")
+	(printout data "parent of " ?child " is " ?name " " crlf)
+	(close data)
 	else
 	(retract ?set)
 	(assert (person (name ?name) (childrens ?Rest)))))

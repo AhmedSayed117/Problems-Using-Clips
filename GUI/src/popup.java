@@ -20,11 +20,11 @@ public class popup extends JFrame {
 
         this.setTitle(title);
 
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setResizable(false);
         this.setContentPane(MainPanel);
 
-        MainPanel.setPreferredSize( new Dimension( 600, 150 ) );
+        MainPanel.setPreferredSize( new Dimension( 350, 150 ) );
         this.pack();
 
         final popup frame = this;
@@ -35,17 +35,12 @@ public class popup extends JFrame {
 
                 if (!Input1.getText().isEmpty()){
                     rinput = Input1.getText();
-                    System.out.println(rinput);
 
                     frame.setVisible(false);
                     frame.dispose();
                 }
             }
         });
-
-        System.out.println(rinput);
         rinput = "";
-
-
     }
 }
