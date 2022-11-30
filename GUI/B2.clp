@@ -9,11 +9,6 @@
 	(list ))
 
 
-(defrule ask-user
-	(declare (salience 50))
-=>
-	(printout t "Enter Your Color: ")
-	(assert (choose (read))))
 
 
 (defrule Countries

@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ClipsGui extends JFrame{
     private JCheckBox B1;
@@ -16,6 +17,10 @@ public class ClipsGui extends JFrame{
     private JCheckBox B6;
     private JButton Run;
     private JPanel MainPanel;
+    private JButton showInputFieldButton;
+    popup p2 ;
+    popup p6 ;
+
     public ClipsGui(){
         super();
 
@@ -40,6 +45,20 @@ public class ClipsGui extends JFrame{
 //        console.init();
 //        console.getFrame().setLocation(this.getX() + this.getWidth() + this.getInsets().right, this.getY());
 
+        showInputFieldButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (JCheckBox Buttons:problems){
+                    if (Buttons.isSelected()){
+                        if (Buttons.getText().equalsIgnoreCase("Problem 2")){
+                           p2 = new popup("Choose Your Color For Problem 2");
+                        }if (Buttons.getText().equalsIgnoreCase("Problem 6")){
+                           p6 = new popup("Enter Child For Problem 6");
+                        }
+                    }
+                }
+            }
+        });
 
         Run.addActionListener(new ActionListener(){
              final Environment clips = new Environment();
@@ -56,11 +75,15 @@ public class ClipsGui extends JFrame{
                                 clips.run();
                             }
                             case "Problem 2" -> {
-                                System.out.println("\n------------B2-------------");
-                                clips.clear();
-                                clips.load("B2.clp");
-                                clips.reset();
-                                clips.run();
+                                if (p2!=null && !p2.ReturnInput().isEmpty()){
+                                    System.out.println("\n------------B2-------------");
+                                    clips.clear();
+                                    clips.load("B2.clp");
+                                    clips.reset();
+                                    clips.assertString("(choose " + p2.ReturnInput() + ")");
+                                    clips.run();
+                                }
+
                             }
                             case "Problem 3" -> {
                                 System.out.println("\n------------B3-------------");
@@ -69,14 +92,14 @@ public class ClipsGui extends JFrame{
                                 clips.reset();
                                 clips.run();
                             }
-//                          case "B4":
-//                              System.out.println("------------B4-------------");
-//                              clips.clear();
-//                              clips.load("B4.clp");
-//                              clips.reset();
-////                              clips.assertString("(send [s1] calcArea)");
-//                              clips.run();
-//                              break;
+                          case "Problem 4"-> {
+                              System.out.println("------------B4-------------");
+                              clips.clear();
+                              clips.load("B4.clp");
+                              clips.reset();
+                              System.out.println(clips.assertString("(send [s1] calcArea)"));
+                              clips.run();
+                          }
                             case "Problem 5" -> {
                                 System.out.println("\n------------B5-------------");
                                 clips.clear();
@@ -85,11 +108,14 @@ public class ClipsGui extends JFrame{
                                 clips.run();
                             }
                             case "Problem 6" -> {
-                                System.out.println("\n------------B6-------------");
-                                clips.clear();
-                                clips.load("B6.clp");
-                                clips.reset();
-                                clips.run();
+                                if (p6!=null && !p6.ReturnInput().isEmpty()){
+                                    System.out.println("\n------------B6-------------");
+                                    clips.clear();
+                                    clips.load("B6.clp");
+                                    clips.reset();
+                                    System.out.println(clips.assertString("(child-name " + "\""+ p6.ReturnInput() + "\""+ ")"));
+                                    clips.run();
+                                }
                             }
                         }
                     }

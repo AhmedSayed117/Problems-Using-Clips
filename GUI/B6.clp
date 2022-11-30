@@ -8,8 +8,7 @@
 	(person (name "Khaled Ashraf") (childrens "B" "C" "D" "C"))
 	(person (name "Hassan") (childrens "X" "C" "D" "S" "N"))
 	(person (name "Youssef") (childrens "Y" "C" "D" "E"))
-	(person (name "Mohamed") (childrens "Z" "C" "D" "Y" "D" "Y"))
-	(child-name))
+	(person (name "Mohamed") (childrens "Z" "C" "D" "Y" "D" "Y")))
 
 
 (defrule Print-Parent-more-than-3-Child
@@ -21,11 +20,11 @@
 	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)))
 
 
-(defrule input-user
-	(declare (salience 4))
-=>
-	(printout t crlf "Enter Child Name: ")
-	(assert (child-name (readline))))
+;(defrule input-user
+;	(declare (salience 4))
+;=>
+;	(printout t crlf "Enter Child Name: ")
+;	(assert (child-name (readline))))
 
 
 (defrule Print-Parent-of-Child
