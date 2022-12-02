@@ -1,2 +1,6 @@
 (parents Ahmed mona Mohammed)
+(parent mona Mohammed)
+(parent Ali Sara)
+(parent Hassan Ahmed)
 (grandfathers Hassan Mohammed)
+(parent Ahmed Mohammed)

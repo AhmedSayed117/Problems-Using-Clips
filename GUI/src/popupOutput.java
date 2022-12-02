@@ -19,6 +19,9 @@ public class popupOutput extends JFrame {
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         this.setResizable(false);
+
+
+
         this.setContentPane(panel1);
 
         panel1.setPreferredSize( new Dimension( 400, 400 ) );

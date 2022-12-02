@@ -4,11 +4,11 @@
 
 
 (deffacts Initials-persons
-	(person (name "Ahmed Sayed") (childrens "Ahmed Sayed" "S" "H" ))
-	(person (name "Khaled Ashraf") (childrens "B" "C" "D" "C"))
-	(person (name "Hassan") (childrens "X" "C" "D" "S" "N"))
-	(person (name "Youssef") (childrens "Y" "C" "D" "E"))
-	(person (name "Mohamed") (childrens "Z" "C" "D" "Y" "D" "Y")))
+	(person (name "Ahmed Sayed") (childrens "Salma" "Kaled" "Menna" ))
+	(person (name "Menna Sayed") (childrens "Sayed" "Mohamed" "Ragab" "Mona"))
+	(person (name "Mallak Sayed") (childrens "S" "T" "A" "Kholod"))
+	(person (name "Youssef") (childrens "M" "Mona" "Tatto" "T"))
+	(person (name "Sara") (childrens "Mona" "K" "Mohamed" "M" "Salem" "Ahmed")))
 
 
 (defrule Print-Parent-more-than-3-Child
@@ -17,11 +17,9 @@
 =>
 	(if (> (length$ ?child) 3)
 	then
-
-	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)
-
 	(open "GUI6.txt" data "a")
 	(printout data "This parent : " ?name " Have More Than 3 Child " ?child crlf)
+	(printout t "This parent : " ?name " Have More Than 3 Child " ?child crlf)
 	(close data)))
 
 
@@ -33,9 +31,9 @@
 	(if (eq ?First ?child)
 	then
 	(retract ?set)
-	(printout t "parent of " ?child " is " ?name " " crlf)
 	(open "GUI6.txt" data "a")
 	(printout data "parent of " ?child " is " ?name " " crlf)
+	(printout t "parent of " ?child " is " ?name " " crlf)
 	(close data)
 	else
 	(retract ?set)

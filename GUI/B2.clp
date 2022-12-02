@@ -8,7 +8,7 @@
 	(color Greece Blue White)
 	(list ))
 
-
+;validate The Countries That Have User Color
 (defrule Countries
 	?country <-(color ?CountreName ?First $?Rest)
 	?l <-(list $?N)
@@ -21,33 +21,29 @@
 	(retract ?country)
 	(assert (color ?CountreName $?Rest))))
 	
-	
+;Print "["
 (defrule Print-new-line-B
 	(declare (salience -1))
 =>
-		(printout t "[ ")
-		(open "GUI2.txt" data "a")
-		(printout data "[ ")
-		(close data)
-	)
+	(open "GUI2.txt" data "a")
+	(printout data "[ ")
+	(close data))
 
-
+;Print Result
 (defrule Print-List
 	(declare (salience -2))
 	?set<-(list ?Value $?Rest)
 =>
-	(printout t ?Value  " ")
 	(open "GUI2.txt" data "a")
 	(printout data ?Value  " ")
 	(retract ?set)
 	(assert(list $?Rest))
 	(close data))
 
-
+;Print "]"
 (defrule Print-new-line-A
 	(declare (salience -3))
 =>
-	(printout t "]" crlf)
 	(open "GUI2.txt" data "a")
 	(printout data "]" crlf)
 	(close data))

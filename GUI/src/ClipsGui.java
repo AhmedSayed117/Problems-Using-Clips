@@ -23,7 +23,6 @@ public class ClipsGui extends JFrame{
     private JPanel MainPanel;
     popup p2 ;
     popup p6 ;
-
     popupOutput o1 ;
     popupOutput o2 ;
     popupOutput o3 ;
@@ -100,6 +99,7 @@ public class ClipsGui extends JFrame{
                         o3.dispose();
             }
         });
+
         B5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,7 +127,7 @@ public class ClipsGui extends JFrame{
                     if (Buttons.isSelected()){
                         switch (Buttons.getText()) {
                             case "Problem 1" -> {
-                                System.out.println("\n------------B1-------------");
+//                                System.out.println("\n------------B1-------------");
                                 clips.clear();
                                 clips.load("B1.clp");
                                 clips.reset();
@@ -140,7 +140,7 @@ public class ClipsGui extends JFrame{
                             }
                             case "Problem 2" -> {
                                 if (p2!=null && !p2.ReturnInput().isEmpty()){
-                                    System.out.println("\n------------B2-------------");
+//                                    System.out.println("\n------------B2-------------");
                                     clips.clear();
                                     clips.load("B2.clp");
                                     clips.reset();
@@ -155,7 +155,7 @@ public class ClipsGui extends JFrame{
 
                             }
                             case "Problem 3" -> {
-                                System.out.println("\n------------B3-------------");
+//                                System.out.println("\n------------B3-------------");
                                 clips.clear();
                                 clips.load("B3.clp");
                                 clips.reset();
@@ -176,7 +176,7 @@ public class ClipsGui extends JFrame{
 //                              clips.run();
 //                          }
                             case "Problem 5" -> {
-                                System.out.println("\n------------B5-------------");
+//                                System.out.println("\n------------B5-------------");
                                 clips.clear();
                                 clips.load("B5.clp");
                                 clips.reset();
@@ -191,7 +191,7 @@ public class ClipsGui extends JFrame{
                             }
                             case "Problem 6" -> {
                                 if (p6!=null && !p6.ReturnInput().isEmpty()){
-                                    System.out.println("\n------------B6-------------");
+//                                    System.out.println("\n------------B6-------------");
                                     clips.clear();
                                     clips.load("B6.clp");
                                     clips.reset();
